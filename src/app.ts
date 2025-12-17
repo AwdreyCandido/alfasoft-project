@@ -1,12 +1,12 @@
-import express from 'express';
-import dotenv from 'dotenv';
+import express from "express";
+import dotenv from "dotenv";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   const porta = PORT;
 
   res.send(`
@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.get('/teste', (req, res) => {
+app.get("/teste", (req, res) => {
   res.send(`
     <h2>Instruções do Teste</h2>
     <p>Cria uma API simples em Node.js com autenticação JWT e persistência em base de dados.</p>
@@ -85,7 +85,4 @@ app.get('/teste', (req, res) => {
   `);
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor da AlfaSoft está a correr em http://localhost:${PORT}`);
-
-});
+export default app;
