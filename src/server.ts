@@ -1,8 +1,16 @@
-import app from './app';
+import app from "./app";
+import { checkDbConnection } from "./config/database";
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Servidor da AlfaSoft está a correr em http://localhost:${PORT}`);
-});
+async function startServer() {
+  // await checkDbConnection();
 
+  app.listen(PORT, () => {
+    console.log(
+      `Servidor da AlfaSoft está a correr em http://localhost:${PORT}`
+    );
+  });
+}
+
+startServer();
